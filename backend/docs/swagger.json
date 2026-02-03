@@ -1,0 +1,2765 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "SomApp Oncologic API",
+        "version": "1.0.0",
+        "description": "Documentación de la API de SomApp"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3016/api/v1",
+            "description": "Local server"
+        },
+        {
+            "url": "https://somapp.tarket.com.pe:3016/api/v1",
+            "description": "Production server"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Users",
+            "description": "Registro y autenticación de usuarios"
+        },
+        {
+            "name": "Roles",
+            "description": "Gestión de roles y permisos"
+        },
+        {
+            "name": "Universities",
+            "description": "Gestión de universidades médicas"
+        },
+        {
+            "name": "Specialities",
+            "description": "Gestión de especialidades médicas"
+        },
+        {
+            "name": "Allergies",
+            "description": "Gestión de alergias médicas"
+        },
+        {
+            "name": "Medical Conditions",
+            "description": "Gestión de condiciones médicas"
+        },
+        {
+            "name": "Risk Factors",
+            "description": "Gestión de factores de riesgo"
+        },
+        {
+            "name": "Symptoms",
+            "description": "Gestión de síntomas clínicos"
+        },
+
+
+        {
+            "name": "Doctors",
+            "description": "Operaciones relacionadas a doctores"
+        },
+        {
+            "name": "Patients",
+            "description": "Operaciones relacionadas a pacientes"
+        },
+
+
+        {
+            "name": "Messages",
+            "description": "Mensajes entre pacientes, doctores y chatbot"
+        },
+        {
+            "name": "Predictions",
+            "description": "Predicciones del modelo para pacientes"
+        },
+
+        {
+            "name": "Doctor Rooms",
+            "description": "Consultorios médicos de doctores"
+        },
+
+
+
+        {
+            "name": "Appointments",
+            "description": "Gestión de citas médicas"
+        },
+        {
+            "name": "Appointment Statuses",
+            "description": "Estados de las citas médicas"
+        },
+        {
+            "name": "Appointment Methods",
+            "description": "Modalidades de citas médicas"
+        },
+
+        {
+            "name": "Notifications",
+            "description": "Notificaciones para pacientes y doctores"
+        },
+        {
+            "name": "Notification Severities",
+            "description": "Severidades de notificación"
+        }
+
+    ],
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
+            }
+        },
+        "schemas": {
+            "User": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "roleId": {
+                        "type": "integer"
+                    },
+                    "photo": {
+                        "type": "boolean"
+                    },
+                    "dniCe": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "lastname": {
+                        "type": "string"
+                    },
+                    "birthdate": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "sex": {
+                        "type": "boolean"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "phone": {
+                        "type": "string"
+                    },
+                    "username": {
+                        "type": "string"
+                    },
+                    "hashPassword": {
+                        "type": "string"
+                    },
+                    "universityId": {
+                        "type": "integer"
+                    },
+                    "egresateDate": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "specialtyId": {
+                        "type": "integer"
+                    },
+                    "cpm": {
+                        "type": "string"
+                    },
+                    "rne": {
+                        "type": "string"
+                    },
+                    "active": {
+                        "type": "boolean"
+                    },
+                    "token": {
+                        "type": "string"
+                    },
+                    "failedAttempts": {
+                        "type": "integer"
+                    },
+                    "bannedUntil": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "lastLoginAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "linkable": {
+                        "type": "boolean"
+                    },
+                    "weight": {
+                        "type": "number"
+                    },
+                    "height": {
+                        "type": "number"
+                    },
+                    "bmi": {
+                        "type": "number"
+                    }
+                }
+            },
+            "UserCreate": {
+                "type": "object",
+                "properties": {
+                    "roleId": {
+                        "type": "integer"
+                    },
+                    "dniCe": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "lastname": {
+                        "type": "string"
+                    },
+                    "birthdate": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "sex": {
+                        "type": "boolean"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "phone": {
+                        "type": "string"
+                    },
+                    "username": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UserUpdate": {
+                "type": "object",
+                "properties": {
+                    "roleId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "lastname": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string"
+                    },
+                    "phone": {
+                        "type": "string"
+                    },
+                    "weight": {
+                        "type": "number"
+                    },
+                    "height": {
+                        "type": "number"
+                    }
+                }
+            },
+            "Allergy": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "creatorId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "AllergyCreate": {
+                "type": "object",
+                "properties": {
+                    "creatorId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "AllergyUpdate": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "userLogin": {
+                "type": "object",
+                "properties": {
+                    "username": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                }
+            },
+            "MedicalCondition": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "creatorId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "MedicalConditionCreate": {
+                "type": "object",
+                "properties": {
+                    "creatorId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "MedicalConditionUpdate": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Specialty": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "color": {
+                        "type": "string"
+                    }
+                }
+            },
+            "SpecialtyCreate": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "color": {
+                        "type": "string"
+                    }
+                }
+            },
+            "SpecialtyUpdate": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "color": {
+                        "type": "string"
+                    }
+                }
+            },
+            "University": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "acronym": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "icon": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UniversityCreate": {
+                "type": "object",
+                "properties": {
+                    "acronym": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "icon": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UniversityUpdate": {
+                "type": "object",
+                "properties": {
+                    "acronym": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "icon": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Appointment": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "doctorId": {
+                        "type": "integer"
+                    },
+                    "patientId": {
+                        "type": "integer"
+                    },
+                    "roomId": {
+                        "type": "integer"
+                    },
+                    "proposedBy": {
+                        "type": "integer"
+                    },
+                    "start": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "end": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "topic": {
+                        "type": "string"
+                    },
+                    "reason": {
+                        "type": "string"
+                    },
+                    "attend": {
+                        "type": "boolean"
+                    },
+                    "statusId": {
+                        "type": "integer"
+                    },
+                    "methodId": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "AppointmentCreate": {
+                "type": "object",
+                "properties": {
+                    "doctorId": {
+                        "type": "integer"
+                    },
+                    "patientId": {
+                        "type": "integer"
+                    },
+                    "roomId": {
+                        "type": "integer"
+                    },
+                    "proposedBy": {
+                        "type": "integer"
+                    },
+                    "start": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "end": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "topic": {
+                        "type": "string"
+                    },
+                    "reason": {
+                        "type": "string"
+                    },
+                    "statusId": {
+                        "type": "integer"
+                    },
+                    "methodId": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "AppointmentUpdate": {
+                "type": "object",
+                "properties": {
+                    "start": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "end": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "topic": {
+                        "type": "string"
+                    },
+                    "reason": {
+                        "type": "string"
+                    },
+                    "statusId": {
+                        "type": "integer"
+                    },
+                    "methodId": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "DoctorRoom": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "photo": {
+                        "type": "boolean"
+                    },
+                    "doctorId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "active": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "DoctorRoomCreate": {
+                "type": "object",
+                "properties": {
+                    "photo": {
+                        "type": "boolean"
+                    },
+                    "doctorId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    }
+                }
+            },
+            "DoctorRoomUpdate": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "active": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "RiskFactor": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "creatorId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "risk": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "RiskFactorCreate": {
+                "type": "object",
+                "properties": {
+                    "creatorId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "risk": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "RiskFactorUpdate": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "risk": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "Symptom": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "creatorId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "severity": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "SymptomCreate": {
+                "type": "object",
+                "properties": {
+                    "creatorId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "severity": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "SymptomUpdate": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "severity": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "Notification": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "doctorId": {
+                        "type": "integer"
+                    },
+                    "patientId": {
+                        "type": "integer"
+                    },
+                    "summary": {
+                        "type": "string"
+                    },
+                    "detail": {
+                        "type": "string"
+                    },
+                    "severityId": {
+                        "type": "integer"
+                    },
+                    "shown": {
+                        "type": "boolean"
+                    },
+                    "deleted": {
+                        "type": "boolean"
+                    }
+                }
+            },
+            "NotificationCreate": {
+                "type": "object",
+                "properties": {
+                    "doctorId": {
+                        "type": "integer"
+                    },
+                    "patientId": {
+                        "type": "integer"
+                    },
+                    "summary": {
+                        "type": "string"
+                    },
+                    "detail": {
+                        "type": "string"
+                    },
+                    "severityId": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "NotificationUpdate": {
+                "type": "object",
+                "properties": {
+                    "summary": {
+                        "type": "string"
+                    },
+                    "detail": {
+                        "type": "string"
+                    },
+                    "severityId": {
+                        "type": "integer"
+                    }
+                }
+            },
+            "Prediction": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "patientId": {
+                        "type": "integer"
+                    },
+                    "inputData": {
+                        "type": "object"
+                    },
+                    "riskScore": {
+                        "type": "number"
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                }
+            },
+            "PredictionCreate": {
+                "type": "object",
+                "properties": {
+                    "patientId": {
+                        "type": "integer"
+                    },
+                    "inputData": {
+                        "type": "object"
+                    }
+                }
+            },
+            "PredictionUpdate": {
+                "type": "object",
+                "properties": {
+                    "riskScore": {
+                        "type": "number"
+                    },
+                    "inputData": {
+                        "type": "object"
+                    }
+                }
+            }
+        }
+    },
+    "paths": {
+        "/register": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Registrar nuevo usuario",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserCreate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Usuario registrado correctamente"
+                    },
+                    "400": {
+                        "description": "Datos inválidos"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Iniciar sesión",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/userLogin"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Inicio de sesión exitoso, token generado"
+                    },
+                    "401": {
+                        "description": "Credenciales inválidas"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/user/{userId}/update": {
+            "post": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "Actualizar usuario",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Usuario actualizado correctamente"
+                    },
+                    "400": {
+                        "description": "Datos inválidos"
+                    },
+                    "404": {
+                        "description": "Usuario no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/roles": {
+            "get": {
+                "tags": [
+                    "Roles"
+                ],
+                "summary": "Listar roles",
+                "responses": {
+                    "200": {
+                        "description": "Lista de roles"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/roles/{roleId}": {
+            "get": {
+                "tags": [
+                    "Roles"
+                ],
+                "summary": "Obtener rol por ID",
+                "parameters": [
+                    {
+                        "name": "roleId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Rol encontrado"
+                    },
+                    "404": {
+                        "description": "Rol no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+
+
+
+        "/universities": {
+            "get": {
+                "tags": [
+                    "Universities"
+                ],
+                "summary": "Listar universidades",
+                "responses": {
+                    "200": {
+                        "description": "Lista de universidades"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/universities/{universityId}": {
+            "get": {
+                "tags": [
+                    "Universities"
+                ],
+                "summary": "Obtener universidad por ID",
+                "parameters": [
+                    {
+                        "name": "universityId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Universidad encontrada"
+                    },
+                    "404": {
+                        "description": "Universidad no encontrada"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+
+
+
+        "/specialities": {
+            "get": {
+                "tags": [
+                    "Specialities"
+                ],
+                "summary": "Listar especialidades",
+                "responses": {
+                    "200": {
+                        "description": "Lista de especialidades"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/specialities/{specialityId}": {
+            "get": {
+                "tags": [
+                    "Specialities"
+                ],
+                "summary": "Obtener especialidad por ID",
+                "parameters": [
+                    {
+                        "name": "specialityId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Especialidad encontrada"
+                    },
+                    "404": {
+                        "description": "Especialidad no encontrada"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+
+
+
+        "/appointments/statuses": {
+            "get": {
+                "tags": [
+                    "Appointment Statuses"
+                ],
+                "summary": "Listar estados de cita",
+                "responses": {
+                    "200": {
+                        "description": "Lista de estados de cita"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/appointments/statuses/{statusId}": {
+            "get": {
+                "tags": [
+                    "Appointment Statuses"
+                ],
+                "summary": "Obtener estado de cita",
+                "parameters": [
+                    {
+                        "name": "statusId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Estado encontrado"
+                    },
+                    "404": {
+                        "description": "Estado no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+
+
+
+        "/appointments/methods": {
+            "get": {
+                "tags": [
+                    "Appointment Methods"
+                ],
+                "summary": "Listar métodos de cita",
+                "responses": {
+                    "200": {
+                        "description": "Lista de métodos"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/appointments/methods/{methodId}": {
+            "get": {
+                "tags": [
+                    "Appointment Methods"
+                ],
+                "summary": "Obtener método de cita por ID",
+                "parameters": [
+                    {
+                        "name": "methodId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Método encontrado"
+                    },
+                    "404": {
+                        "description": "Método no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+
+
+
+
+        "/notifications/severities": {
+            "get": {
+                "tags": [
+                    "Notification Severities"
+                ],
+                "summary": "Listar severidades de notificación",
+                "responses": {
+                    "200": {
+                        "description": "Lista de severidades"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/notifications/severities/{severityId}": {
+            "get": {
+                "tags": [
+                    "Notification Severities"
+                ],
+                "summary": "Obtener severidad por ID",
+                "parameters": [
+                    {
+                        "name": "severityId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Severidad encontrada"
+                    },
+                    "404": {
+                        "description": "Severidad no encontrada"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+
+
+
+
+        "/allergies": {
+            "get": {
+                "tags": [
+                    "Allergies"
+                ],
+                "summary": "Listar alergias",
+                "responses": {
+                    "200": {
+                        "description": "Lista de alergias"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Allergies"
+                ],
+                "summary": "Crear alergia",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AllergyCreate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Alergia creada correctamente"
+                    },
+                    "400": {
+                        "description": "Datos inválidos"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/allergies/{allergiesId}": {
+            "get": {
+                "tags": [
+                    "Allergies"
+                ],
+                "summary": "Obtener alergia por ID",
+                "parameters": [
+                    {
+                        "name": "allergiesId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Alergia encontrada"
+                    },
+                    "404": {
+                        "description": "Alergia no encontrada"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Allergies"
+                ],
+                "summary": "Actualizar alergia por ID",
+                "parameters": [
+                    {
+                        "name": "allergiesId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AllergyUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Alergia actualizada"
+                    },
+                    "400": {
+                        "description": "Datos inválidos"
+                    },
+                    "404": {
+                        "description": "Alergia no encontrada"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/allergies/{allergiesId}/patients": {
+            "get": {
+                "tags": [
+                    "Allergies"
+                ],
+                "summary": "Listar pacientes que tienen esta alergia",
+                "parameters": [
+                    {
+                        "name": "allergiesId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista obtenida"
+                    },
+                    "404": {
+                        "description": "Alergia no encontrada"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/patients/{patientId}/allergies": {
+            "get": {
+                "tags": [
+                    "Allergies"
+                ],
+                "summary": "Listar alergias del paciente",
+                "parameters": [
+                    {
+                        "name": "patientId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista obtenida"
+                    },
+                    "404": {
+                        "description": "Paciente no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/patients/{patientId}/allergies/{allergyId}": {
+            "post": {
+                "tags": [
+                    "Allergies"
+                ],
+                "summary": "Agregar alergia al paciente",
+                "parameters": [
+                    {
+                        "name": "patientId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "allergyId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Alergia agregada"
+                    },
+                    "400": {
+                        "description": "Datos inválidos"
+                    },
+                    "404": {
+                        "description": "Paciente o alergia no encontrada"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+
+
+
+
+        "/conditions": {
+            "get": {
+                "tags": [
+                    "Medical Conditions"
+                ],
+                "summary": "Listar condiciones médicas",
+                "responses": {
+                    "200": {
+                        "description": "Lista de condiciones"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Medical Conditions"
+                ],
+                "summary": "Crear nueva condición médica",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MedicalConditionCreate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Condición creada"
+                    },
+                    "400": {
+                        "description": "Datos inválidos"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/conditions/{conditionId}": {
+            "get": {
+                "tags": [
+                    "Medical Conditions"
+                ],
+                "summary": "Obtener condición por ID",
+                "parameters": [
+                    {
+                        "name": "conditionId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Condición encontrada"
+                    },
+                    "404": {
+                        "description": "Condición no encontrada"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Medical Conditions"
+                ],
+                "summary": "Actualizar condición por ID",
+                "parameters": [
+                    {
+                        "name": "conditionId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/MedicalConditionUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Condición actualizada"
+                    },
+                    "400": {
+                        "description": "Datos inválidos"
+                    },
+                    "404": {
+                        "description": "Condición no encontrada"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/conditions/{conditionId}/patients": {
+            "get": {
+                "tags": [
+                    "Medical Conditions"
+                ],
+                "summary": "Listar pacientes asociados a la condición",
+                "parameters": [
+                    {
+                        "name": "conditionId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista obtenida"
+                    },
+                    "404": {
+                        "description": "Condición no encontrada"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/patients/{patientId}/conditions": {
+            "get": {
+                "tags": [
+                    "Medical Conditions"
+                ],
+                "summary": "Listar condiciones del paciente",
+                "parameters": [
+                    {
+                        "name": "patientId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista obtenida"
+                    },
+                    "404": {
+                        "description": "Paciente no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/patients/{patientId}/conditions/{conditionId}": {
+            "post": {
+                "tags": [
+                    "Medical Conditions"
+                ],
+                "summary": "Vincular condicion al paciente",
+                "parameters": [
+                    {
+                        "name": "patientId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "conditionId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista obtenida"
+                    },
+                    "404": {
+                        "description": "Paciente no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+
+
+
+
+        "/risks": {
+            "get": {
+                "tags": [
+                    "Risk Factors"
+                ],
+                "summary": "Listar factores de riesgo",
+                "responses": {
+                    "200": {
+                        "description": "Lista obtenida"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Risk Factors"
+                ],
+                "summary": "Crear factor de riesgo",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RiskFactorCreate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Factor de riesgo creado"
+                    },
+                    "400": {
+                        "description": "Datos inválidos"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/risks/{riskId}": {
+            "get": {
+                "tags": [
+                    "Risk Factors"
+                ],
+                "summary": "Obtener factor de riesgo por ID",
+                "parameters": [
+                    {
+                        "name": "riskId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Factor encontrado"
+                    },
+                    "404": {
+                        "description": "Factor no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Risk Factors"
+                ],
+                "summary": "Actualizar factor de riesgo",
+                "parameters": [
+                    {
+                        "name": "riskId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/RiskFactorUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Factor actualizado"
+                    },
+                    "400": {
+                        "description": "Datos inválidos"
+                    },
+                    "404": {
+                        "description": "Factor no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/risks/{riskId}/patients": {
+            "get": {
+                "tags": [
+                    "Risk Factors"
+                ],
+                "summary": "Listar pacientes que tienen este riesgo",
+                "parameters": [
+                    {
+                        "name": "riskId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista obtenida"
+                    },
+                    "404": {
+                        "description": "Riesgo no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/patients/{patientId}/risks": {
+            "get": {
+                "tags": [
+                    "Risk Factors"
+                ],
+                "summary": "Listar riesgos del paciente",
+                "parameters": [
+                    {
+                        "name": "patientId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista obtenida"
+                    },
+                    "404": {
+                        "description": "Paciente no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/patients/{patientId}/risks/{riskId}": {
+            "post": {
+                "tags": [
+                    "Risk Factors"
+                ],
+                "summary": "Vincular riesgo al paciente",
+                "parameters": [
+                    {
+                        "name": "patientId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "riskId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Riesgo vinculado al paciente"
+                    },
+                    "400": {
+                        "description": "Datos inválidos"
+                    },
+                    "404": {
+                        "description": "Paciente o riesgo no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+
+
+
+
+        "/symptoms": {
+            "get": {
+                "tags": [
+                    "Symptoms"
+                ],
+                "summary": "Listar síntomas",
+                "responses": {
+                    "200": {
+                        "description": "Lista de síntomas"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Symptoms"
+                ],
+                "summary": "Crear síntoma",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SymptomCreate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Síntoma creado correctamente"
+                    },
+                    "400": {
+                        "description": "Datos inválidos"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/symptoms/{symptomId}": {
+            "get": {
+                "tags": [
+                    "Symptoms"
+                ],
+                "summary": "Obtener síntoma por ID",
+                "parameters": [
+                    {
+                        "name": "symptomId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Síntoma encontrado"
+                    },
+                    "404": {
+                        "description": "Síntoma no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Symptoms"
+                ],
+                "summary": "Actualizar síntoma por ID",
+                "parameters": [
+                    {
+                        "name": "symptomId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SymptomUpdate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Síntoma actualizado"
+                    },
+                    "400": {
+                        "description": "Datos inválidos"
+                    },
+                    "404": {
+                        "description": "Síntoma no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/symptoms/{symptomId}/patients": {
+            "get": {
+                "tags": [
+                    "Symptoms"
+                ],
+                "summary": "Listar pacientes que presentan este síntoma",
+                "parameters": [
+                    {
+                        "name": "symptomId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista obtenida"
+                    },
+                    "404": {
+                        "description": "Síntoma no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/patients/{patientId}/symptoms": {
+            "get": {
+                "tags": [
+                    "Symptoms"
+                ],
+                "summary": "Listar síntomas del paciente",
+                "parameters": [
+                    {
+                        "name": "patientId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista obtenida"
+                    },
+                    "404": {
+                        "description": "Paciente no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/patients/{patientId}/symptoms/{symptomId}": {
+            "post": {
+                "tags": [
+                    "Symptoms"
+                ],
+                "summary": "Vincular síntoma al paciente con severidad",
+                "parameters": [
+                    {
+                        "name": "patientId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "symptomId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "severity": {
+                                        "type": "integer",
+                                        "description": "Nivel de severidad del síntoma para el paciente"
+                                    }
+                                },
+                                "required": [
+                                    "severity"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Síntoma vinculado al paciente con severidad registrada"
+                    },
+                    "400": {
+                        "description": "Datos inválidos"
+                    },
+                    "404": {
+                        "description": "Paciente o síntoma no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+
+
+
+
+        "/patients/{patientId}/appointments/{appointmentId}": {
+            "get": {
+                "tags": ["Appointments"],
+                "summary": "Obtener cita por ID para el paciente",
+                "parameters": [
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "appointmentId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": {
+                    "200": { "description": "Cita encontrada" },
+                    "404": { "description": "Cita no encontrada" }
+                }
+            },
+            "put": {
+                "tags": ["Appointments"],
+                "summary": "Actualizar cita del paciente",
+                "parameters": [
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "appointmentId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": { "$ref": "#/components/schemas/AppointmentUpdate" }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": { "description": "Cita actualizada" },
+                    "404": { "description": "Cita no encontrada" }
+                }
+            },
+            "delete": {
+                "tags": ["Appointments"],
+                "summary": "Eliminar cita del paciente",
+                "parameters": [
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "appointmentId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": {
+                    "200": { "description": "Cita eliminada" },
+                    "404": { "description": "Cita no encontrada" }
+                }
+            }
+        },
+        "/patients/{patientId}/doctors/{doctorId}/appointments": {
+            "get": {
+                "tags": ["Appointments"],
+                "summary": "Listar citas entre el paciente y el doctor",
+                "parameters": [
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": {
+                    "200": { "description": "Lista de citas" },
+                    "404": { "description": "No encontrado" }
+                }
+            }
+        },
+
+        "/patients/{patientId}/doctors/{doctorId}/appointments/{appointmentId}": {
+            "delete": {
+                "tags": ["Appointments"],
+                "summary": "Eliminar cita entre paciente y doctor",
+                "parameters": [
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "appointmentId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": {
+                    "200": { "description": "Cita eliminada" },
+                    "404": { "description": "Cita no encontrada" }
+                }
+            }
+        },
+        "/patients/{patientId}/doctors": {
+            "get": {
+                "tags": ["Doctors"],
+                "summary": "Listar doctores asociados al paciente",
+                "parameters": [
+                    {
+                        "name": "patientId",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "integer" }
+                    }
+                ],
+                "responses": {
+                    "200": { "description": "Lista de doctores" },
+                    "404": { "description": "Paciente no encontrado" },
+                    "500": { "description": "Error del servidor" }
+                }
+            }
+        },
+        "/patients/{patientId}/messages": {
+            "get": {
+                "tags": [
+                    "Messages"
+                ],
+                "summary": "Listar mensajes del paciente",
+                "parameters": [
+                    {
+                        "name": "patientId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista obtenida"
+                    },
+                    "404": {
+                        "description": "Paciente no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Messages"
+                ],
+                "summary": "Crear mensaje para el paciente",
+                "parameters": [
+                    {
+                        "name": "patientId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Mensaje creado"
+                    },
+                    "400": {
+                        "description": "Datos inválidos"
+                    },
+                    "404": {
+                        "description": "Paciente no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/patients/{patientId}/messages/gpt-response": {
+            "get": {
+                "tags": ["Messages"],
+                "summary": "Generar respuesta automática del chatbot",
+                "parameters": [
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": {
+                    "200": { "description": "Respuesta generada" }
+                }
+            }
+        },
+
+        "/patients/{patientId}/messages/{messageId}/read": {
+            "put": {
+                "tags": ["Messages"],
+                "summary": "Marcar mensaje como leído",
+                "parameters": [
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "messageId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": {
+                    "200": { "description": "Mensaje marcado como leído" },
+                    "404": { "description": "Mensaje no encontrado" }
+                }
+            }
+        },
+
+        "/patients/{patientId}/messages/{messageId}/text": {
+            "put": {
+                "tags": ["Messages"],
+                "summary": "Actualizar texto del mensaje",
+                "parameters": [
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "messageId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": {
+                    "200": { "description": "Texto actualizado" },
+                    "404": { "description": "Mensaje no encontrado" }
+                }
+            }
+        },
+
+        "/patients/{patientId}/notifications": {
+            "get": {
+                "tags": [
+                    "Notifications"
+                ],
+                "summary": "Listar notificaciones del paciente",
+                "parameters": [
+                    {
+                        "name": "patientId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista obtenida"
+                    },
+                    "404": {
+                        "description": "Paciente no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/patients/{patientId}/notifications/{notificationId}": {
+            "delete": {
+                "tags": ["Notifications"],
+                "summary": "Eliminar notificación del paciente",
+                "parameters": [
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "notificationId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": {
+                    "200": { "description": "Notificación eliminada" },
+                    "404": { "description": "Notificación no encontrada" }
+                }
+            }
+        },
+        "/patients/{patientId}/predictions": {
+            "get": {
+                "tags": [
+                    "Predictions"
+                ],
+                "summary": "Listar predicciones clínicas del paciente",
+                "parameters": [
+                    {
+                        "name": "patientId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista de predicciones"
+                    },
+                    "404": {
+                        "description": "Paciente no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+
+        "/doctors/{doctorId}/allergies": {
+            "get": {
+                "tags": ["Doctors"],
+                "summary": "Listar alergias creadas por el doctor",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": { "200": { "description": "Lista obtenida" } }
+            }
+        },
+
+        "/doctors/{doctorId}/appointments": {
+            "get": {
+                "tags": ["Appointments"],
+                "summary": "Listar citas del doctor",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": { "200": { "description": "Lista de citas" } }
+            }
+        },
+
+        "/doctors/{doctorId}/appointments/{appointmentId}": {
+            "get": {
+                "tags": ["Appointments"],
+                "summary": "Obtener cita del doctor por ID",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "appointmentId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": { "200": { "description": "Cita encontrada" } }
+            }
+        },
+
+        "/doctors/{doctorId}/conditions": {
+            "get": {
+                "tags": ["Doctors"],
+                "summary": "Listar condiciones creadas por el doctor",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": { "200": { "description": "Lista obtenida" } }
+            }
+        },
+
+
+        "/doctors/{doctorId}/patients": {
+            "get": {
+                "tags": [
+                    "Patients"
+                ],
+                "summary": "Listar pacientes asociados al doctor",
+                "parameters": [
+                    {
+                        "name": "doctorId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista obtenida"
+                    },
+                    "404": {
+                        "description": "Doctor no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+
+        "/doctors/{doctorId}/patients/{patientId}": {
+            "post": {
+                "tags": ["Patients"],
+                "summary": "Asociar paciente al doctor",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": { "201": { "description": "Asociado" } }
+            },
+            "delete": {
+                "tags": ["Patients"],
+                "summary": "Desasociar paciente del doctor",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": { "200": { "description": "Desasociado" } }
+            }
+        },
+
+        "/doctors/{doctorId}/patients/{patientId}/appointments": {
+            "get": {
+                "tags": [
+                    "Appointments"
+                ],
+                "summary": "Listar citas entre doctor y paciente",
+                "parameters": [
+                    {
+                        "name": "doctorId",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    },
+                    {
+                        "name": "patientId",
+                        "in": "path",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista de citas"
+                    },
+                    "404": {
+                        "description": "No encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Appointments"
+                ],
+                "summary": "Crear cita entre doctor y paciente",
+                "responses": {
+                    "201": {
+                        "description": "Cita creada"
+                    },
+                    "400": {
+                        "description": "Datos inválidos"
+                    },
+                    "404": {
+                        "description": "Doctor o paciente no encontrado"
+                    },
+                    "500": {
+                        "description": "Error del servidor"
+                    }
+                }
+            }
+        },
+        "/doctors/{doctorId}/patients/{patientId}/appointments/{appointmentId}": {
+            "put": {
+                "tags": ["Appointments"],
+                "summary": "Actualizar cita entre doctor y paciente",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "appointmentId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": { "schema": { "$ref": "#/components/schemas/AppointmentUpdate" }}
+                    }
+                },
+                "responses": { "200": { "description": "Cita actualizada" } }
+            },
+            "delete": {
+                "tags": ["Appointments"],
+                "summary": "Eliminar cita entre doctor y paciente",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "appointmentId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": { "200": { "description": "Cita eliminada" } }
+            }
+        },
+
+        "/doctors/{doctorId}/patients/{patientId}/messages": {
+            "get": {
+                "tags": ["Messages"],
+                "summary": "Listar mensajes del paciente (vista doctor)",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": { "200": { "description": "Lista de mensajes" } }
+            },
+            "post": {
+                "tags": ["Messages"],
+                "summary": "Crear mensaje como doctor",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": { "201": { "description": "Mensaje creado" } }
+            }
+        },
+
+        "/doctors/{doctorId}/patients/{patientId}/messages/{messageId}/text": {
+            "put": {
+                "tags": ["Messages"],
+                "summary": "Actualizar texto del mensaje (doctor)",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "messageId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": { "200": { "description": "Mensaje actualizado" } }
+            }
+        },
+
+        "/doctors/{doctorId}/patients/{patientId}/messages/{messageId}/doctorNote": {
+            "put": {
+                "tags": ["Messages"],
+                "summary": "Agregar o actualizar nota del doctor",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "messageId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": { "200": { "description": "Nota del doctor actualizada" } }
+            }
+        },
+
+        "/doctors/{doctorId}/patients/{patientId}/notifications": {
+            "get": {
+                "tags": ["Notifications"],
+                "summary": "Listar notificaciones del paciente (vista doctor)",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": { "200": { "description": "Lista de notificaciones" } }
+            },
+            "post": {
+                "tags": ["Notifications"],
+                "summary": "Crear notificación para el paciente (doctor)",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": { "$ref": "#/components/schemas/NotificationCreate" }
+                        }
+                    }
+                },
+                "responses": { "201": { "description": "Notificación creada" } }
+            }
+        },
+
+        "/doctors/{doctorId}/patients/{patientId}/notifications/{notificationId}": {
+            "delete": {
+                "tags": ["Notifications"],
+                "summary": "Eliminar notificación del paciente (doctor)",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "notificationId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": { "200": { "description": "Notificación eliminada" } }
+            }
+        },
+
+        "/doctors/{doctorId}/patients/{patientId}/predictions": {
+            "get": {
+                "tags": ["Predictions"],
+                "summary": "Listar predicciones del paciente (vista doctor)",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }},
+                    { "name": "patientId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": { "200": { "description": "Lista de predicciones" } }
+            }
+        },
+
+        "/doctors/{doctorId}/risks": {
+            "get": {
+                "tags": ["Doctors"],
+                "summary": "Listar factores de riesgo creados por el doctor",
+                "parameters": [
+                    { "name": "doctorId", "in": "path", "required": true, "schema": { "type": "integer" }}
+                ],
+                "responses": { "200": { "description": "Lista obtenida" } }
+            }
+        },
+        "/doctors/{doctorId}/rooms": {
+            "get": {
+                "tags": ["Doctor Rooms"],
+                "summary": "Listar consultorios del doctor",
+                "parameters": [
+                    {
+                        "name": "doctorId",
+                        "in": "path",
+                        "schema": { "type": "integer" },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Lista de consultorios",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": { "$ref": "#/components/schemas/DoctorRoom" }
+                                }
+                            }
+                        }
+                    },
+                    "404": { "description": "Doctor no encontrado" },
+                    "500": { "description": "Error del servidor" }
+                }
+            },
+            "post": {
+                "tags": ["Doctor Rooms"],
+                "summary": "Crear consultorio",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": { "$ref": "#/components/schemas/DoctorRoomCreate" }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Consultorio creado",
+                        "content": {
+                            "application/json": {
+                                "schema": { "$ref": "#/components/schemas/DoctorRoom" }
+                            }
+                        }
+                    },
+                    "400": { "description": "Datos inválidos" },
+                    "404": { "description": "Doctor no encontrado" },
+                    "500": { "description": "Error del servidor" }
+                }
+            }
+        },
+        "/doctors/{doctorId}/rooms/{roomId}": {
+            "get": {
+                "tags": ["Doctor Rooms"],
+                "summary": "Obtener consultorio",
+                "parameters": [
+                    {
+                        "name": "doctorId",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "integer" }
+                    },
+                    {
+                        "name": "roomId",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "integer" }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Consultorio encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": { "$ref": "#/components/schemas/DoctorRoom" }
+                            }
+                        }
+                    },
+                    "404": { "description": "Consultorio no encontrado" },
+                    "500": { "description": "Error del servidor" }
+                }
+            },
+            "put": {
+                "tags": ["Doctor Rooms"],
+                "summary": "Actualizar consultorio",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": { "$ref": "#/components/schemas/DoctorRoomUpdate" }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Consultorio actualizado",
+                        "content": {
+                            "application/json": {
+                                "schema": { "$ref": "#/components/schemas/DoctorRoom" }
+                            }
+                        }
+                    },
+                    "400": { "description": "Datos inválidos" },
+                    "404": { "description": "Consultorio no encontrado" },
+                    "500": { "description": "Error del servidor" }
+                }
+            },
+            "delete": {
+                "tags": ["Doctor Rooms"],
+                "summary": "Eliminar consultorio",
+                "responses": {
+                    "200": {
+                        "description": "Consultorio eliminado",
+                        "content": {
+                            "application/json": {
+                                "schema": { "$ref": "#/components/schemas/DoctorRoom" }
+                            }
+                        }
+                    },
+                    "404": { "description": "Consultorio no encontrado" },
+                    "500": { "description": "Error del servidor" }
+                }
+            }
+        }
+    }
+}

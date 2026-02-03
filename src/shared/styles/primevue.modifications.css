@@ -1,0 +1,119 @@
+.p-floatlabel{ transition: margin 0.3s; }
+
+.p-password,
+.p-inputtext,
+.p-select,
+.p-multiselect,
+.p-textarea {
+    width: 16rem;
+    min-width: 16rem;
+    max-width: 16rem;
+}
+
+.p-password,
+.p-inputtext,
+.p-select,
+.p-multiselect,
+.p-textarea {
+    width: 16rem;
+    min-width: 16rem;
+    max-width: 16rem;
+}
+.p-inputgroupaddon,
+.p-password,
+.p-inputtext,
+.p-select,
+.p-multiselect,
+.p-textarea {
+    backdrop-filter: blur(0.4rem);
+}
+
+.p-inputnumber-fluid .p-inputtext {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+
+.p-floatlabel:has(.p-invalid) label{ color: var(--p-red-500)!important; }
+.p-floatlabel:has(input:focus),
+.p-floatlabel:has(textarea:focus),
+.p-floatlabel:has(.p-filled),
+.p-floatlabel:has(.p-inputwrapper-filled),
+.p-floatlabel:has(.p-inputwrapper-focus),
+.p-floatlabel:has(.no-movement){
+    margin-top: 1.3rem;
+}
+
+
+
+
+
+.p-inputtext.p-component.p-invalid,
+.p-select.p-component.p-invalid{ background: #F004!important; }
+.p-inputtext.p-component.p-invalid .p-icon,
+.p-password:has(.p-inputtext.p-component.p-invalid) .p-icon{
+    color: var(--p-red-500)!important;
+}
+
+
+
+td{ padding: 0.75rem!important;}
+
+.p-divider-horizontal::before{ border-block-start: 1px solid #444!important;}
+
+.p-button { min-height: 2rem; }
+.p-select-overlay{
+    backdrop-filter: blur(0.4rem);
+    border: none;
+}
+
+
+:root{
+    --p-datatable-row-striped-background: #7777770B!important;
+    --p-datatable-header-background: #7771!important;
+    --p-select-overlay-background: #fff2!important;
+}
+.p-datatable-header-cell{ background: var(--p-datatable-header-background)!important; }
+
+.p-card{ break-inside: avoid; }
+
+
+
+@media (prefers-color-scheme: dark) {
+    #register .p-select-option,
+    #register .p-icon.p-password-toggle-mask-icon,
+    #register .p-icon.p-select-dropdown-icon,
+    #register .p-select-label,
+    #register .p-inputtext {
+        color: #fff!important;
+    }
+
+    #register .p-select-label.p-placeholder,
+    #register .p-inputtext.p-component::placeholder,
+    #login .p-inputtext.p-component::placeholder{
+        color: #FFF6!important;
+    }
+}
+@media (prefers-color-scheme: light) {
+    #register .p-select-option,
+    #register .p-icon.p-password-toggle-mask-icon,
+    #register .p-icon.p-select-dropdown-icon,
+    #register .p-select-label,
+    #register .p-inputtext{
+        color: #fff!important;
+    }
+
+    #register .p-select-label.p-placeholder,
+    #register .p-inputtext.p-component::placeholder,
+    #login .p-inputtext.p-component::placeholder{
+        color: #FFF6!important;
+    }
+}
+
+
+.p-select-option.p-focus{ background: #0c490e11!important; }
+.p-select-option.p-select-option-selected{ background: #0c490e22!important;}
+.p-select-option.p-select-option-selected.p-focus{ background: #0c490e33!important;}
+
+.p-toast{ max-width: calc(100vw - 2.5rem) }

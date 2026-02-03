@@ -1,0 +1,226 @@
+.rotate-0 { transform: rotate(0deg) }
+.rotate-10 { transform: rotate(10deg) }
+.rotate-20 { transform: rotate(20deg) }
+.rotate-30 { transform: rotate(30deg) }
+.rotate-40 { transform: rotate(40deg) }
+.rotate-50 { transform: rotate(50deg) }
+.rotate-60 { transform: rotate(60deg) }
+.rotate-70 { transform: rotate(70deg) }
+.rotate-80 { transform: rotate(80deg) }
+.rotate-90 { transform: rotate(90deg) }
+.rotate-100 { transform: rotate(100deg) }
+.rotate-110 { transform: rotate(110deg) }
+.rotate-120 { transform: rotate(120deg) }
+.rotate-130 { transform: rotate(130deg) }
+.rotate-140 { transform: rotate(140deg) }
+.rotate-150 { transform: rotate(150deg) }
+.rotate-160 { transform: rotate(160deg) }
+.rotate-170 { transform: rotate(170deg) }
+.rotate-180 { transform: rotate(180deg) }
+.rotate-190 { transform: rotate(190deg) }
+.rotate-200 { transform: rotate(200deg) }
+.rotate-210 { transform: rotate(210deg) }
+.rotate-220 { transform: rotate(220deg) }
+.rotate-230 { transform: rotate(230deg) }
+.rotate-240 { transform: rotate(240deg) }
+.rotate-250 { transform: rotate(250deg) }
+.rotate-260 { transform: rotate(260deg) }
+.rotate-270 { transform: rotate(270deg) }
+.rotate-280 { transform: rotate(280deg) }
+.rotate-290 { transform: rotate(290deg) }
+.rotate-300 { transform: rotate(300deg) }
+.rotate-310 { transform: rotate(310deg) }
+.rotate-320 { transform: rotate(320deg) }
+.rotate-330 { transform: rotate(330deg) }
+.rotate-340 { transform: rotate(340deg) }
+.rotate-350 { transform: rotate(350deg) }
+.rotate-360 { transform: rotate(360deg) }
+
+.hover-rotate-0:hover { transform: rotate(0deg) }
+.hover-rotate-10:hover { transform: rotate(10deg) }
+.hover-rotate-20:hover { transform: rotate(20deg) }
+.hover-rotate-30:hover { transform: rotate(30deg) }
+.hover-rotate-40:hover { transform: rotate(40deg) }
+.hover-rotate-50:hover { transform: rotate(50deg) }
+.hover-rotate-60:hover { transform: rotate(60deg) }
+.hover-rotate-70:hover { transform: rotate(70deg) }
+.hover-rotate-80:hover { transform: rotate(80deg) }
+.hover-rotate-90:hover { transform: rotate(90deg) }
+.hover-rotate-100:hover { transform: rotate(100deg) }
+.hover-rotate-110:hover { transform: rotate(110deg) }
+.hover-rotate-120:hover { transform: rotate(120deg) }
+.hover-rotate-130:hover { transform: rotate(130deg) }
+.hover-rotate-140:hover { transform: rotate(140deg) }
+.hover-rotate-150:hover { transform: rotate(150deg) }
+.hover-rotate-160:hover { transform: rotate(160deg) }
+.hover-rotate-170:hover { transform: rotate(170deg) }
+.hover-rotate-180:hover { transform: rotate(180deg) }
+.hover-rotate-190:hover { transform: rotate(190deg) }
+.hover-rotate-200:hover { transform: rotate(200deg) }
+.hover-rotate-210:hover { transform: rotate(210deg) }
+.hover-rotate-220:hover { transform: rotate(220deg) }
+.hover-rotate-230:hover { transform: rotate(230deg) }
+.hover-rotate-240:hover { transform: rotate(240deg) }
+.hover-rotate-250:hover { transform: rotate(250deg) }
+.hover-rotate-260:hover { transform: rotate(260deg) }
+.hover-rotate-270:hover { transform: rotate(270deg) }
+.hover-rotate-280:hover { transform: rotate(280deg) }
+.hover-rotate-290:hover { transform: rotate(290deg) }
+.hover-rotate-300:hover { transform: rotate(300deg) }
+.hover-rotate-310:hover { transform: rotate(310deg) }
+.hover-rotate-320:hover { transform: rotate(320deg) }
+.hover-rotate-330:hover { transform: rotate(330deg) }
+.hover-rotate-340:hover { transform: rotate(340deg) }
+.hover-rotate-350:hover { transform: rotate(350deg) }
+.hover-rotate-360:hover { transform: rotate(360deg) }
+
+.translate-x-0 {transform: translateX(0);}
+.translate-x-10 {transform: translateX(10%);}
+.translate-x-20 {transform: translateX(20%);}
+.translate-x-30 {transform: translateX(30%);}
+.translate-x-40 {transform: translateX(40%);}
+.translate-x-50 {transform: translateX(50%);}
+.translate-x-60 {transform: translateX(60%);}
+.translate-x-70 {transform: translateX(70%);}
+.translate-x-80 {transform: translateX(80%);}
+.translate-x-90 {transform: translateX(90%);}
+.translate-x-100 {transform: translateX(100%);}
+
+.hover-translate-x-0:hover {transform: translateX(0%);}
+.hover-translate-x-10:hover {transform: translateX(10%);}
+.hover-translate-x-20:hover {transform: translateX(20%);}
+.hover-translate-x-30:hover {transform: translateX(30%);}
+.hover-translate-x-40:hover {transform: translateX(40%);}
+.hover-translate-x-50:hover {transform: translateX(50%);}
+.hover-translate-x-60:hover {transform: translateX(60%);}
+.hover-translate-x-70:hover {transform: translateX(70%);}
+.hover-translate-x-80:hover {transform: translateX(80%);}
+.hover-translate-x-90:hover {transform: translateX(90%);}
+.hover-translate-x-100:hover {transform: translateX(100%);}
+
+.translate-y-0 {transform: translateY(0);}
+.translate-y-10 {transform: translateY(10%);}
+.translate-y-20 {transform: translateY(20%);}
+.translate-y-30 {transform: translateY(30%);}
+.translate-y-40 {transform: translateY(40%);}
+.translate-y-50 {transform: translateY(50%);}
+.translate-y-60 {transform: translateY(60%);}
+.translate-y-70 {transform: translateY(70%);}
+.translate-y-80 {transform: translateY(80%);}
+.translate-y-90 {transform: translateY(90%);}
+.translate-y-100 {transform: translateY(100%);}
+
+.hover-translate-y-0:hover {transform: translateY(0%);}
+.hover-translate-y-10:hover {transform: translateY(10%);}
+.hover-translate-y-20:hover {transform: translateY(20%);}
+.hover-translate-y-30:hover {transform: translateY(30%);}
+.hover-translate-y-40:hover {transform: translateY(40%);}
+.hover-translate-y-50:hover {transform: translateY(50%);}
+.hover-translate-y-60:hover {transform: translateY(60%);}
+.hover-translate-y-70:hover {transform: translateY(70%);}
+.hover-translate-y-80:hover {transform: translateY(80%);}
+.hover-translate-y-90:hover {transform: translateY(90%);}
+.hover-translate-y-100:hover {transform: translateY(100%);}
+
+.scale-0 { transform: scale(0); }
+.scale-50 { transform: scale(0.5); }
+.scale-60 { transform: scale(0.6); }
+.scale-65 { transform: scale(0.65); }
+.scale-70 { transform: scale(0.7); }
+.scale-75 { transform: scale(0.75); }
+.scale-80 { transform: scale(0.8); }
+.scale-85 { transform: scale(0.85); }
+.scale-86 { transform: scale(0.86); }
+.scale-87 { transform: scale(0.87); }
+.scale-88 { transform: scale(0.88); }
+.scale-89 { transform: scale(0.89); }
+.scale-90 { transform: scale(0.9); }
+.scale-91 { transform: scale(0.91); }
+.scale-92 { transform: scale(0.92); }
+.scale-93 { transform: scale(0.93); }
+.scale-94 { transform: scale(0.94); }
+.scale-95 { transform: scale(0.95); }
+.scale-96 { transform: scale(0.96); }
+.scale-97 { transform: scale(0.97); }
+.scale-98 { transform: scale(0.98); }
+.scale-99 { transform: scale(0.99); }
+.scale-100 { transform: scale(1); }
+.scale-101 { transform: scale(1.01); }
+.scale-102 { transform: scale(1.02); }
+.scale-103 { transform: scale(1.03); }
+.scale-104 { transform: scale(1.04); }
+.scale-105 { transform: scale(1.05); }
+.scale-106 { transform: scale(1.06); }
+.scale-107 { transform: scale(1.07); }
+.scale-108 { transform: scale(1.08); }
+.scale-109 { transform: scale(1.09); }
+.scale-110 { transform: scale(1.10); }
+.scale-111 { transform: scale(1.11); }
+.scale-112 { transform: scale(1.12); }
+.scale-113 { transform: scale(1.13); }
+.scale-114 { transform: scale(1.14); }
+.scale-115 { transform: scale(1.15); }
+.scale-120 { transform: scale(1.20); }
+.scale-125 { transform: scale(1.25); }
+.scale-130 { transform: scale(1.30); }
+.scale-135 { transform: scale(1.35); }
+.scale-140 { transform: scale(1.40); }
+.scale-145 { transform: scale(1.45); }
+.scale-150 { transform: scale(1.50); }
+
+.hover-scale-0:hover { transform: scale(0); }
+.hover-scale-50:hover { transform: scale(0.50); }
+.hover-scale-60:hover { transform: scale(0.60); }
+.hover-scale-65:hover { transform: scale(0.65); }
+.hover-scale-70:hover { transform: scale(0.70); }
+.hover-scale-75:hover { transform: scale(0.75); }
+.hover-scale-80:hover { transform: scale(0.80); }
+.hover-scale-85:hover { transform: scale(0.85); }
+.hover-scale-86:hover { transform: scale(0.86); }
+.hover-scale-87:hover { transform: scale(0.87); }
+.hover-scale-88:hover { transform: scale(0.88); }
+.hover-scale-89:hover { transform: scale(0.89); }
+.hover-scale-90:hover { transform: scale(0.90); }
+.hover-scale-91:hover { transform: scale(0.91); }
+.hover-scale-92:hover { transform: scale(0.92); }
+.hover-scale-93:hover { transform: scale(0.93); }
+.hover-scale-94:hover { transform: scale(0.94); }
+.hover-scale-95:hover { transform: scale(0.95); }
+.hover-scale-96:hover { transform: scale(0.96); }
+.hover-scale-97:hover { transform: scale(0.97); }
+.hover-scale-98:hover { transform: scale(0.98); }
+.hover-scale-99:hover { transform: scale(0.99); }
+.hover-scale-100:hover { transform: scale(1); }
+.hover-scale-101:hover { transform: scale(1.01); }
+.hover-scale-102:hover { transform: scale(1.02); }
+.hover-scale-103:hover { transform: scale(1.03); }
+.hover-scale-104:hover { transform: scale(1.04); }
+.hover-scale-105:hover { transform: scale(1.05); }
+.hover-scale-106:hover { transform: scale(1.06); }
+.hover-scale-107:hover { transform: scale(1.07); }
+.hover-scale-108:hover { transform: scale(1.08); }
+.hover-scale-109:hover { transform: scale(1.09); }
+.hover-scale-110:hover { transform: scale(1.10); }
+.hover-scale-111:hover { transform: scale(1.11); }
+.hover-scale-112:hover { transform: scale(1.12); }
+.hover-scale-113:hover { transform: scale(1.13); }
+.hover-scale-114:hover { transform: scale(1.14); }
+.hover-scale-115:hover { transform: scale(1.15); }
+.hover-scale-120:hover { transform: scale(1.20); }
+.hover-scale-125:hover { transform: scale(1.25); }
+.hover-scale-130:hover { transform: scale(1.30); }
+.hover-scale-135:hover { transform: scale(1.35); }
+.hover-scale-140:hover { transform: scale(1.40); }
+.hover-scale-145:hover { transform: scale(1.45); }
+.hover-scale-150:hover { transform: scale(1.50); }
+
+.perspective-100 { perspective: 100px; }
+.perspective-200 { perspective: 200px; }
+.perspective-300 { perspective: 300px; }
+.perspective-400 { perspective: 400px; }
+.perspective-500 { perspective: 500px; }
+.perspective-600 { perspective: 600px; }
+.perspective-700 { perspective: 700px; }
+.perspective-800 { perspective: 800px; }
+.perspective-900 { perspective: 900px; }
+.perspective-1000 { perspective: 1000px; }

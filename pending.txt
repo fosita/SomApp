@@ -1,0 +1,4 @@
+Implementar consultorios medicos
+Implementar sistema de riesgos por paciente
+Implementar sistema de citas médicas
+Implementar sistema de historial clínico

@@ -1,0 +1,138 @@
+html, body, #app{
+    margin: 0!important;
+    padding: 0!important;
+    border: 0!important;
+    max-width: 100vw;
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+}
+/* Estilos para temas oscuros */
+/* con clases root */
+:root{
+    --navbar-height: 4rem;
+    --main-height: calc(100vh - 4rem);
+    --font: "Poppins";
+    --font-weight-titles: 600;
+    --font-weight-subtitles: 500;
+    --font-weight-text: 400;
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        --primary-bg: #f2f2f2;
+        --bg: radial-gradient(circle at top center, #fff, #ddd);
+        --text: #222;
+        --primary-text: #222;
+        --secondary-text: #444;
+        --tertiary-text: #666;
+        --primary: #1976D2;
+
+        --home-bg-light: #1976D2;
+        --home-bg-dark: #0b3667;
+
+        --card-bg: #ddd8;
+
+        --p-progressspinner-color-1: #222f!important;
+        --p-progressspinner-color-2: #2229!important;
+        --p-progressspinner-color-3: #222f!important;
+        --p-progressspinner-color-4: #2229!important;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-bg: #0a0a0a;
+        --bg: radial-gradient(circle at top center, #333, #111);
+        --text: #f2f2f2;
+        --primary-text: #f2f2f2;
+        --secondary-text: #ccc;
+        --tertiary-text: #aaa;
+        --primary: #1976D2;
+
+        --home-bg-light: #0b3667;
+        --home-bg-dark: #020a12;
+
+        --card-bg: #8882;
+
+        --p-progressspinner-color-1: #ffff !important;
+        --p-progressspinner-color-2: #fff9!important;
+        --p-progressspinner-color-3: #ffff!important;
+        --p-progressspinner-color-4: #fff9!important;
+    }
+}
+
+/* Estilos globales */
+p, li, span, a, div, label, input, button, textarea, select, option, section,
+footer, nav, header, main, h1, h2, h3, h4, h5, h6, table, th, td, tr{
+    font-family: var(--font), sans-serif;
+    font-weight: var(--font-weight-text);
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6{ font-weight: var(--font-weight-subtitles); color: var(--primary) }
+h1, h2 { font-weight: var(--font-weight-titles) }
+
+.primary-color{ color: var(--primary); }
+.primary-text,
+.primary-text-color{ color: var(--primary-text); }
+.secondary-text,
+.secondary-text-color{ color: var(--secondary-text); }
+.tertiary-text,
+.tertiary-text-color{ color: var(--tertiary-text); }
+.primary-bg{ background-color: var(--primary-bg); }
+
+/* Colores y estilos por defecto */
+header {
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+    position: absolute;
+    width: 100%;
+    height: var(--navbar-height);
+    top: 0;
+}
+
+
+.fullscreen { height: 100vh; width: 100vw; position: absolute; top: 0; left: 0; z-index: 100;}
+.min-h-full{ min-height: 100vh }
+.overflow-auto { overflow-y: auto; overflow-x: hidden; }
+
+.login-background{
+    background: radial-gradient(
+            circle at top center,
+            var(--home-bg-light),
+            var(--home-bg-dark)
+    );
+    background-size: cover;
+    height: 100vh;
+    z-index: 1;
+}
+.login-background::before{
+    background-image:radial-gradient(circle at bottom, #00dc82, #36e4da, #0047e1);
+    animation: gradientBG 15s ease infinite;
+    z-index: 5;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: .15;
+}
+.login-background::before:hover{ opacity: .40; }
+.login-background::after{
+    z-index: 2;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: .25;
+    background: url('/public/noise.png') repeat;
+}
+@media (prefers-color-scheme: dark) {
+    .login-background::after{ background: url('/public/white_noise.png') repeat; }
+}
+.text-button{ cursor: pointer; user-select: none; }
+#login {  position: relative; min-height: 100vh; align-content: center }

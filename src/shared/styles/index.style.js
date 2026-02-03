@@ -1,0 +1,15 @@
+import './animations.css'
+import './display.directions.css'
+import './display.positions.css'
+import './flags.css'
+import './font.sizes.css'
+import './font.colors.css'
+import './image.sizes.css'
+import './main.css'
+import './margins.paddings.css'
+import './primevue.modifications.css'
+import './responsive.styles.css'
+import './transforms.css'
+
+import './../fonts/poppins.font.css'
+export default {}

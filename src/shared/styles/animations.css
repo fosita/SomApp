@@ -1,0 +1,252 @@
+.animate-background-100 { transition: background 100ms }
+.animate-background-200 { transition: background 200ms }
+.animate-background-300 { transition: background 300ms }
+.animate-background-400 { transition: background 400ms }
+.animate-background-500 { transition: background 500ms }
+.animate-background-600 { transition: background 600ms }
+.animate-background-700 { transition: background 700ms }
+.animate-background-800 { transition: background 800ms }
+.animate-background-900 { transition: background 900ms }
+.animate-background-1000 { transition: background 1000ms }
+.animate-background-1100 { transition: background 1100ms }
+.animate-background-1200 { transition: background 1200ms }
+.animate-background-1300 { transition: background 1300ms }
+.animate-background-1400 { transition: background 1400ms }
+.animate-background-1500 { transition: background 1500ms }
+.animate-background-1600 { transition: background 1600ms }
+.animate-background-1700 { transition: background 1700ms }
+.animate-background-1800 { transition: background 1800ms }
+.animate-background-1900 { transition: background 1900ms }
+.animate-background-2000 { transition: background 2000ms }
+
+.animate-transform-100 { transition: transform 100ms }
+.animate-transform-200 { transition: transform 200ms }
+.animate-transform-300 { transition: transform 300ms }
+.animate-transform-400 { transition: transform 400ms }
+.animate-transform-500 { transition: transform 500ms }
+.animate-transform-600 { transition: transform 600ms }
+.animate-transform-700 { transition: transform 700ms }
+.animate-transform-800 { transition: transform 800ms }
+.animate-transform-900 { transition: transform 900ms }
+.animate-transform-1000 { transition: transform 1000ms }
+.animate-transform-1100 { transition: transform 1100ms }
+.animate-transform-1200 { transition: transform 1200ms }
+.animate-transform-1300 { transition: transform 1300ms }
+.animate-transform-1400 { transition: transform 1400ms }
+.animate-transform-1500 { transition: transform 1500ms }
+.animate-transform-1600 { transition: transform 1600ms }
+.animate-transform-1700 { transition: transform 1700ms }
+.animate-transform-1800 { transition: transform 1800ms }
+.animate-transform-1900 { transition: transform 1900ms }
+.animate-transform-2000 { transition: transform 2000ms }
+
+.animate-opacity-100 { transition: opacity 100ms }
+.animate-opacity-200 { transition: opacity 200ms }
+.animate-opacity-300 { transition: opacity 300ms }
+.animate-opacity-400 { transition: opacity 400ms }
+.animate-opacity-500 { transition: opacity 500ms }
+.animate-opacity-600 { transition: opacity 600ms }
+.animate-opacity-700 { transition: opacity 700ms }
+.animate-opacity-800 { transition: opacity 800ms }
+.animate-opacity-900 { transition: opacity 900ms }
+.animate-opacity-1000 { transition: opacity 1000ms }
+.animate-opacity-1100 { transition: opacity 1100ms }
+.animate-opacity-1200 { transition: opacity 1200ms }
+.animate-opacity-1300 { transition: opacity 1300ms }
+.animate-opacity-1400 { transition: opacity 1400ms }
+.animate-opacity-1500 { transition: opacity 1500ms }
+.animate-opacity-1600 { transition: opacity 1600ms }
+.animate-opacity-1700 { transition: opacity 1700ms }
+.animate-opacity-1800 { transition: opacity 1800ms }
+.animate-opacity-1900 { transition: opacity 1900ms }
+.animate-opacity-2000 { transition: opacity 2000ms }
+
+.animate-color-100 { transition: color 100ms }
+.animate-color-200 { transition: color 200ms }
+.animate-color-300 { transition: color 300ms }
+.animate-color-400 { transition: color 400ms }
+.animate-color-500 { transition: color 500ms }
+.animate-color-600 { transition: color 600ms }
+.animate-color-700 { transition: color 700ms }
+.animate-color-800 { transition: color 800ms }
+.animate-color-900 { transition: color 900ms }
+.animate-color-1000 { transition: color 1000ms }
+.animate-color-1100 { transition: color 1100ms }
+.animate-color-1200 { transition: color 1200ms }
+.animate-color-1300 { transition: color 1300ms }
+.animate-color-1400 { transition: color 1400ms }
+.animate-color-1500 { transition: color 1500ms }
+.animate-color-1600 { transition: color 1600ms }
+.animate-color-1700 { transition: color 1700ms }
+.animate-color-1800 { transition: color 1800ms }
+.animate-color-1900 { transition: color 1900ms }
+.animate-color-2000 { transition: color 2000ms }
+
+.animate-all-100 { transition: all 100ms }
+.animate-all-200 { transition: all 200ms }
+.animate-all-300 { transition: all 300ms }
+.animate-all-400 { transition: all 400ms }
+.animate-all-500 { transition: all 500ms }
+.animate-all-600 { transition: all 600ms }
+.animate-all-700 { transition: all 700ms }
+.animate-all-800 { transition: all 800ms }
+.animate-all-900 { transition: all 900ms }
+.animate-all-1000 { transition: all 1000ms }
+.animate-all-1100 { transition: all 1100ms }
+.animate-all-1200 { transition: all 1200ms }
+.animate-all-1300 { transition: all 1300ms }
+.animate-all-1400 { transition: all 1400ms }
+.animate-all-1500 { transition: all 1500ms }
+.animate-all-1600 { transition: all 1600ms }
+.animate-all-1700 { transition: all 1700ms }
+.animate-all-1800 { transition: all 1800ms }
+.animate-all-1900 { transition: all 1900ms }
+.animate-all-2000 { transition: all 2000ms }
+
+.animate-height-100 { transition: height 100ms, min-height 100ms, max-height 100ms }
+.animate-height-200 { transition: height 200ms, min-height 200ms, max-height 200ms }
+.animate-height-300 { transition: height 300ms, min-height 300ms, max-height 300ms }
+.animate-height-400 { transition: height 400ms, min-height 400ms, max-height 400ms }
+.animate-height-500 { transition: height 500ms, min-height 500ms, max-height 500ms }
+.animate-height-600 { transition: height 600ms, min-height 600ms, max-height 600ms }
+.animate-height-700 { transition: height 700ms, min-height 700ms, max-height 700ms }
+.animate-height-800 { transition: height 800ms, min-height 800ms, max-height 800ms }
+.animate-height-900 { transition: height 900ms, min-height 900ms, max-height 900ms }
+.animate-height-1000 { transition: height 1000ms, min-height 1000ms, max-height 1000ms }
+.animate-height-1100 { transition: height 1100ms, min-height 1100ms, max-height 1100ms }
+.animate-height-1200 { transition: height 1200ms, min-height 1200ms, max-height 1200ms }
+.animate-height-1300 { transition: height 1300ms, min-height 1300ms, max-height 1300ms }
+.animate-height-1400 { transition: height 1400ms, min-height 1400ms, max-height 1400ms }
+.animate-height-1500 { transition: height 1500ms, min-height 1500ms, max-height 1500ms }
+.animate-height-1600 { transition: height 1600ms, min-height 1600ms, max-height 1600ms }
+.animate-height-1700 { transition: height 1700ms, min-height 1700ms, max-height 1700ms }
+.animate-height-1800 { transition: height 1800ms, min-height 1800ms, max-height 1800ms }
+.animate-height-1900 { transition: height 1900ms, min-height 1900ms, max-height 1900ms }
+.animate-height-2000 { transition: height 2000ms, min-height 2000ms, max-height 2000ms }
+
+.animate-width-100 { transition: width 100ms, min-width 100ms, max-width 100ms }
+.animate-width-200 { transition: width 200ms, min-width 200ms, max-width 200ms }
+.animate-width-300 { transition: width 300ms, min-width 300ms, max-width 300ms }
+.animate-width-400 { transition: width 400ms, min-width 400ms, max-width 400ms }
+.animate-width-500 { transition: width 500ms, min-width 500ms, max-width 500ms }
+.animate-width-600 { transition: width 600ms, min-width 600ms, max-width 600ms }
+.animate-width-700 { transition: width 700ms, min-width 700ms, max-width 700ms }
+.animate-width-800 { transition: width 800ms, min-width 800ms, max-width 800ms }
+.animate-width-900 { transition: width 900ms, min-width 900ms, max-width 900ms }
+.animate-width-1000 { transition: width 1000ms, min-width 1000ms, max-width 1000ms }
+.animate-width-1100 { transition: width 1100ms, min-width 1100ms, max-width 1100ms }
+.animate-width-1200 { transition: width 1200ms, min-width 1200ms, max-width 1200ms }
+.animate-width-1300 { transition: width 1300ms, min-width 1300ms, max-width 1300ms }
+.animate-width-1400 { transition: width 1400ms, min-width 1400ms, max-width 1400ms }
+.animate-width-1500 { transition: width 1500ms, min-width 1500ms, max-width 1500ms }
+.animate-width-1600 { transition: width 1600ms, min-width 1600ms, max-width 1600ms }
+.animate-width-1700 { transition: width 1700ms, min-width 1700ms, max-width 1700ms }
+.animate-width-1800 { transition: width 1800ms, min-width 1800ms, max-width 1800ms }
+.animate-width-1900 { transition: width 1900ms, min-width 1900ms, max-width 1900ms }
+.animate-width-2000 { transition: width 2000ms, min-width 2000ms, max-width 2000ms }
+
+.animate-size-100 {
+    transition: height 100ms, min-height 100ms, max-height 100ms,
+    width 100ms, min-width 100ms, max-width 100ms
+}
+.animate-size-200 {
+    transition: height 200ms, min-height 200ms, max-height 200ms,
+    width 200ms, min-width 200ms, max-width 200ms
+}
+.animate-size-300 {
+    transition: height 300ms, min-height 300ms, max-height 300ms,
+    width 300ms, min-width 300ms, max-width 300ms
+}
+.animate-size-400 {
+    transition: height 400ms, min-height 400ms, max-height 400ms,
+    width 400ms, min-width 400ms, max-width 400ms
+}
+.animate-size-500 {
+    transition: height 500ms, min-height 500ms, max-height 500ms,
+    width 500ms, min-width 500ms, max-width 500ms
+}
+.animate-size-600 {
+    transition: height 600ms, min-height 600ms, max-height 600ms,
+    width 600ms, min-width 600ms, max-width 600ms
+}
+.animate-size-700 {
+    transition: height 700ms, min-height 700ms, max-height 700ms,
+    width 700ms, min-width 700ms, max-width 700ms
+}
+.animate-size-800 {
+    transition: height 800ms, min-height 800ms, max-height 800ms,
+    width 800ms, min-width 800ms, max-width 800ms
+}
+.animate-size-900 {
+    transition: height 900ms, min-height 900ms, max-height 900ms,
+    width 900ms, min-width 900ms, max-width 900ms
+}
+.animate-size-1000 {
+    transition: height 1000ms, min-height 1000ms, max-height 1000ms,
+    width 1000ms, min-width 1000ms, max-width 1000ms
+}
+.animate-size-1100 {
+    transition: height 1100ms, min-height 1100ms, max-height 1100ms,
+    width 1100ms, min-width 1100ms, max-width 1100ms
+}
+.animate-size-1200 {
+    transition: height 1200ms, min-height 1200ms, max-height 1200ms,
+    width 1200ms, min-width 1200ms, max-width 1200ms
+}
+.animate-size-1300 {
+    transition: height 1300ms, min-height 1300ms, max-height 1300ms,
+    width 1300ms, min-width 1300ms, max-width 1300ms
+}
+.animate-size-1400 {
+    transition: height 1400ms, min-height 1400ms, max-height 1400ms,
+    width 1400ms, min-width 1400ms, max-width 1400ms
+}
+.animate-size-1500 {
+    transition: height 1500ms, min-height 1500ms, max-height 1500ms,
+    width 1500ms, min-width 1500ms, max-width 1500ms
+}
+.animate-size-1600 {
+    transition: height 1600ms, min-height 1600ms, max-height 1600ms,
+    width 1600ms, min-width 1600ms, max-width 1600ms
+}
+.animate-size-1700 {
+    transition: height 1700ms, min-height 1700ms, max-height 1700ms,
+    width 1700ms, min-width 1700ms, max-width 1700ms
+}
+.animate-size-1800 {
+    transition: height 1800ms, min-height 1800ms, max-height 1800ms,
+    width 1800ms, min-width 1800ms, max-width 1800ms
+}
+.animate-size-1900 {
+    transition: height 1900ms, min-height 1900ms, max-height 1900ms,
+    width 1900ms, min-width 1900ms, max-width 1900ms
+}
+.animate-size-2000 {
+    transition: height 2000ms, min-height 2000ms, max-height 2000ms,
+    width 2000ms, min-width 2000ms, max-width 2000ms
+}
+
+.animate-left-100 { transition: left 100ms }
+.animate-left-200 { transition: left 200ms }
+.animate-left-300 { transition: left 300ms }
+.animate-left-400 { transition: left 400ms }
+.animate-left-500 { transition: left 500ms }
+.animate-left-600 { transition: left 600ms }
+.animate-left-700 { transition: left 700ms }
+.animate-left-800 { transition: left 800ms }
+.animate-left-900 { transition: left 900ms }
+.animate-left-1000 { transition: left 1000ms }
+.animate-left-1100 { transition: left 1100ms }
+.animate-left-1200 { transition: left 1200ms }
+.animate-left-1300 { transition: left 1300ms }
+.animate-left-1400 { transition: left 1400ms }
+.animate-left-1500 { transition: left 1500ms }
+.animate-left-1600 { transition: left 1600ms }
+.animate-left-1700 { transition: left 1700ms }
+.animate-left-1800 { transition: left 1800ms }
+.animate-left-1900 { transition: left 1900ms }
+.animate-left-2000 { transition: left 2000ms }
+
+.animate-ease-in { transition-timing-function: ease-in }
+.animate-ease-out { transition-timing-function: ease-out }
+.animate-ease-in-out { transition-timing-function: ease-in-out }
