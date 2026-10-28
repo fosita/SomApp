@@ -1,5 +1,7 @@
 node_modules
 # Ignorar modelos grandes
-training/*.json
-training/*.pkl
-training/*.h5
+dist
+
+
+.gitignore
+*.env
